@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, Phone, Search, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import logoMark from "@/assets/logo-mark.png";
 import { navLinks, salon } from "@/data/salon";
 import { SearchOverlay } from "@/components/SearchOverlay";
 
@@ -43,9 +44,13 @@ export function Header() {
         <div className="shell">
           <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-3 lg:py-4">
             <Link to="/" className="flex min-w-0 items-center gap-3">
-              <span className="grid h-10 w-10 shrink-0 place-items-center border border-gold/60 font-display text-lg text-gold">
-                L
-              </span>
+              <img
+                src={logoMark}
+                alt="Lubna's Beauty Salon logo"
+                width={512}
+                height={512}
+                className="h-11 w-11 shrink-0 object-contain sm:h-12 sm:w-12"
+              />
               <span className="min-w-0">
                 <span className="block truncate font-display text-lg leading-tight text-ivory sm:text-xl">
                   Lubna&apos;s Beauty Salon
