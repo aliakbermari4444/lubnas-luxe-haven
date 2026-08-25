@@ -69,7 +69,7 @@ function ServicesPage() {
             intro="Use the arrows or dots to move through services, then book the one you need."
           />
           <div className="mt-12">
-            <ServiceCarousel items={services} focusId={focus} />
+            <ServiceCarousel items={services} {...(focus ? { focusId: focus } : {})} />
           </div>
         </div>
       </section>
