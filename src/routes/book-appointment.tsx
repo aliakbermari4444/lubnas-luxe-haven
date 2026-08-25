@@ -44,7 +44,7 @@ function BookAppointmentPage() {
         eyebrow="Book an appointment"
         title="Reserve your time with us"
         intro="Send your details below and we'll confirm your slot by phone. For same-day appointments, calling is fastest."
-        image={images.hero ?? images.heroSalon}
+        image={images.heroSalon}
       />
 
       <section className="py-16 lg:py-24">
