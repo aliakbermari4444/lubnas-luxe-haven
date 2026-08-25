@@ -10,11 +10,10 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (open) {
-      setQuery("");
-      const t = window.setTimeout(() => inputRef.current?.focus(), 60);
-      return () => window.clearTimeout(t);
-    }
+    if (!open) return undefined;
+    setQuery("");
+    const t = window.setTimeout(() => inputRef.current?.focus(), 60);
+    return () => window.clearTimeout(t);
   }, [open]);
 
   useEffect(() => {
