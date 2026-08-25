@@ -14,9 +14,10 @@ import {
 } from "@/data/salon";
 
 export const Route = createFileRoute("/services")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    focus: typeof search.focus === "string" ? search.focus : undefined,
-  }),
+  validateSearch: (search: { focus?: unknown }) => {
+    const focus = search.focus;
+    return typeof focus === "string" ? { focus } : {};
+  },
   head: () => ({
     meta: [
       { title: "Services & Prices — Lubna's Beauty Salon, Mirpurkhas" },
