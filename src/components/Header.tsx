@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, Phone, Search, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import logoMark from "@/assets/logo-mark.png";
 import { navLinks, salon } from "@/data/salon";
 import { SearchOverlay } from "@/components/SearchOverlay";
 
