@@ -14,9 +14,10 @@ import {
 } from "@/data/salon";
 
 export const Route = createFileRoute("/services")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    focus: typeof search.focus === "string" ? search.focus : undefined,
-  }),
+  validateSearch: (search: { focus?: unknown }) => {
+    const focus = search.focus;
+    return typeof focus === "string" ? { focus } : {};
+  },
   head: () => ({
     meta: [
       { title: "Services & Prices — Lubna's Beauty Salon, Mirpurkhas" },
@@ -68,7 +69,7 @@ function ServicesPage() {
             intro="Use the arrows or dots to move through services, then book the one you need."
           />
           <div className="mt-12">
-            <ServiceCarousel items={services} focusId={focus} />
+            <ServiceCarousel items={services} {...(focus ? { focusId: focus } : {})} />
           </div>
         </div>
       </section>
